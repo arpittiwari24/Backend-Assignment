@@ -1,0 +1,13 @@
+version: "3"
+services:
+  db:
+    image: kubearrpit/postgres:latest
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: incorrect
+      POSTGRES_USER: arrpit
+      POSTGRES_DB: users
+  app:
+   image: kubearrpit/my-node-app:latest
+   ports:
+    - 13000:3000
